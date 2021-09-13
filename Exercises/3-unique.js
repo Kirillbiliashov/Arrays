@@ -1,8 +1,16 @@
 'use strict';
 
-// Create and return a new array without duplicate elements
-// Don't modify initial array
 
-const unique = (array) => [];
+
+const unique = (array) => {
+const copy = array;
+for (const value of copy) {
+    const lIndex = copy.lastIndexOf(value);
+    if (copy.indexOf(value) !== lIndex) {
+        copy.splice(lIndex, 1)
+    }
+}
+return copy;
+};
 
 module.exports = { unique };
