@@ -1,16 +1,12 @@
 'use strict';
 
-
-
 const unique = (array) => {
-const copy = array;
-for (const value of copy) {
-    const lIndex = copy.lastIndexOf(value);
-    if (copy.indexOf(value) !== lIndex) {
-        copy.splice(lIndex, 1)
+    const unique = [];
+    for (const elem of array) {
+        const idx = unique.indexOf(elem);
+        if (idx === -1) unique.push(elem);
     }
-}
-return copy;
+    return unique;
 };
 
 module.exports = { unique };
